@@ -7,17 +7,20 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
-
 	Texture birdTexture;
 
+	int birdX = 0, birdY = 0;
+	int birdSpeed = 5;
+
 	@Override
-	public void create() {
+	public void create () {
 		batch = new SpriteBatch();
 		birdTexture = new Texture("bird0.png");
 	}
 
 	@Override
-	public void render() {
+	public void render () {
+
 		birdX += birdSpeed;
 		birdY += birdSpeed;
 
@@ -28,7 +31,8 @@ public class MyGdxGame extends ApplicationAdapter {
 	}
 
 	@Override
-	public void dispose() {
+	public void dispose () {
 		batch.dispose();
+		birdTexture.dispose();
 	}
 }
