@@ -18,8 +18,12 @@ public class MyGdxGame extends ApplicationAdapter {
 
 	@Override
 	public void render() {
+		birdX += birdSpeed;
+		birdY += birdSpeed;
+
 		ScreenUtils.clear(1, 0, 0, 1);
 		batch.begin();
+		batch.draw(birdTexture, birdX, birdY);
 		batch.end();
 	}
 
